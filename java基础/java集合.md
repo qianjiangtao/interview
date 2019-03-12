@@ -71,8 +71,24 @@
 
 - 扩容机制
 
+  ```java
+  table中的元素只有两种情况：
+  元素hash值第N+1位为0：不需要进行位置调整
+  元素hash值第N+1位为1：调整至原索引的两倍位置
+  在resize方法中，确定元素hashi值第N+1位是否为0：
+  若为0，则使用loHead与loTail，将元素移至新table的原索引处
+  若不为0，则使用hiHead与hiHead，将元素移至新table的两倍索引处
   ```
-  
+
+- 链表树化
+
+  ```shell
+  链表长度大于等于 TREEIFY_THRESHOLD //8
+  桶数组容量大于等于 MIN_TREEIFY_CAPACITY //64
+  树化过程：
+  1.比较键与键之间 hash 的大小，如果 hash 相同，继续往下比较
+  2.检测键类是否实现了 Comparable 接口，如果实现调用 compareTo 方法进行比较
+  3.如果仍未比较出大小，就需要进行仲裁了，仲裁方法为 tieBreakOrder（大家自己看源码吧）
   ```
 
   
