@@ -217,7 +217,7 @@ interface=com.demo.dubbo.service.HelloService
 
 #### 5. 画一画服务注册与发现的流程图
 
- ![1552552778563](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/\1552552778563.png)
+ ![1552552778563](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/1552552778563.png)
 
 ####  6.`Dubbo`有哪几种集群容错方案 
 
