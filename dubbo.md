@@ -101,7 +101,7 @@
 
 ####  2.远程服务发布的原理和流程？
 
-![img](D:\myImage\my-image\dubbo\auto-orient) 
+![img](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/auto-orient) 
 
 说明：
 
@@ -205,19 +205,19 @@ interface=com.demo.dubbo.service.HelloService
   4 节点中。
   ```
 
-  ![1552546176928](D:\myImage\my-image\dubbo\1552546176928.png)
+  ![1552546176928](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/1552546176928.png)
 
 关于一致性 hash 算法，我这里只做扫盲。具体的细节不讨论，大家请自行补充相关的背景知识。下面来看看一致性 hash 在 Dubbo 中的应用。我们把上图的缓存节点替换成 Dubbo 的服务提供者，于是得到了下图： 
 
-![1552546198382](D:\myImage\my-image\dubbo\1552546198382.png)
+![1552546198382](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/1552546198382.png)
 
 这里相同颜色的节点均属于同一个服务提供者，比如 Invoker1-1，Invoker1-2，……, Invoker1-160。这样做的目的是通过引入虚拟节点，让 Invoker 在圆环上分散开来，避免数据倾斜问题。所谓数据倾斜是指，由于节点不够分散，导致大量请求落到了同一个节点上，而其他节点只会接收到了少量的请求。比如： 
 
-![1552546270449](D:\myImage\my-image\dubbo\1552546252451.png)
+![1552546270449](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/1552546252451.png)
 
 #### 5. 画一画服务注册与发现的流程图
 
- ![1552552778563](D:\myImage\my-image\dubbo\1552552778563.png)
+ ![1552552778563](https://gitee.com/qianjiangtao/my-image/raw/master/dubbo/\1552552778563.png)
 
 ####  6.`Dubbo`有哪几种集群容错方案 
 
